@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const PageWithJsbasedForm = () => {
+const PageWithJsbasedForm = ({ onSubmitForm }: any) => {
 
   const [answer, setAnswer] = useState("")
   // Handles the submit event on form submit.
@@ -34,6 +34,7 @@ const PageWithJsbasedForm = () => {
     const response = await fetch(endpoint, options)
 
     setAnswer('')
+    onSubmitForm()
     
     const result = await response.json()
     console.log(result)
@@ -44,7 +45,7 @@ const PageWithJsbasedForm = () => {
       <label htmlFor="answer">Answer: </label>
       <input type="text" id="answer" name="answer" value={answer} 
         onChange={(e)=>{setAnswer(e.target.value)}}/>
-      <button type="submit">Submit</button>
+      <button type="submit">回答</button>
     </form>
   )
 }
