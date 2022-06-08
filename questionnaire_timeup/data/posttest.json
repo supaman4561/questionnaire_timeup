@@ -1,14 +1,12 @@
-{
-  "questions": [
-    {
-      "id": 1,
-      "jp": "彼に会いたい。",
-      "question": "I wish (      ) him."
-    },
-    {
-      "id": 2,
-      "jp": "彼女はサリーと同じくらいうまく泳げます。",
-      "question": "She can swim (      ) Sally."
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "jp": "彼に会いたい。",
+    "question": "I wish (      ) him."
+  },
+  {
+    "id": 2,
+    "jp": "彼女はサリーと同じくらいうまく泳げます。",
+    "question": "She can swim (      ) Sally."
+  }
+]

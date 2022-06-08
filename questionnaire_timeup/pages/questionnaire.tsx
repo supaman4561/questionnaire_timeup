@@ -15,12 +15,11 @@ type Question = {
 const Questionnaire: NextPage<Questions> = ({ questions } : Questions) => {
 
   let count = 0
-  console.log(questions.questions[0])
 
   return (
     <main className={styles.main}>
-      <p> {questions.questions[count].jp} </p>
-      <p> {questions.questions[count].question} </p>
+      <p> {questions[count].jp} </p>
+      <p> {questions[count].question} </p>
     </main>
   )
 }
