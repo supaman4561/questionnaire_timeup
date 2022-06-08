@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next'
 import type { NextPage } from 'next'
+import PageWithJsbasedForm from './js-form'
 import styles from '../styles/Home.module.css'
 
 type Questions = {
@@ -17,10 +18,15 @@ const Questionnaire: NextPage<Questions> = ({ questions } : Questions) => {
   let count = 0
 
   return (
-    <main className={styles.main}>
-      <p> {questions[count].jp} </p>
-      <p> {questions[count].question} </p>
-    </main>
+    <div className={styles.container}>
+
+      <main className={styles.main}>
+        <p> Q.{questions[count].id} </p>
+        <p> {questions[count].jp} </p>
+        <p> {questions[count].question} </p>
+        <PageWithJsbasedForm />
+      </main>
+    </div>
   )
 }
 
