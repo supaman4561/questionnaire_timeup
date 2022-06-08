@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import PageWithJsbasedForm from './js-form'
 import styles from '../styles/Home.module.css'
-import {NEXT_URL} from '../setting'
+import pretestjson from '../data/pretest.json'
 
 type Questions = {
   questions: Question[]
@@ -48,8 +48,7 @@ const Questionnaire: NextPage<Questions> = ({ questions } : Questions) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(`${NEXT_URL}/api/questionnaire/pre`)
-  const questions = await res.json()
+  const questions = pretestjson
   return { props: { questions } }
 }
 
