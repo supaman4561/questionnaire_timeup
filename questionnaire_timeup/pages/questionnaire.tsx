@@ -19,6 +19,7 @@ const Questionnaire: NextPage<Questions> = ({ questions } : Questions) => {
 
   const router = useRouter()
   const [count, setCount] = useState(0)
+  const [timer, setTimer] = useState(Date.now())
 
   const nextQuestion = () => {
     if ((count+1) < questions.length) {
@@ -26,6 +27,7 @@ const Questionnaire: NextPage<Questions> = ({ questions } : Questions) => {
     } else {
       router.push('/')
     }
+    setTimer(Date.now())
   }
 
   return (
@@ -35,7 +37,10 @@ const Questionnaire: NextPage<Questions> = ({ questions } : Questions) => {
         <p> Q.{questions[count].id} </p>
         <p> {questions[count].jp} </p>
         <p> {questions[count].question.replace(/\s/g, '\u00A0')} </p>
-        <PageWithJsbasedForm onSubmitForm={nextQuestion} />
+        <PageWithJsbasedForm 
+          id={questions[count].id} 
+          onSubmitForm={nextQuestion} 
+          startTime={timer} />
       </main>
     </div>
   )
