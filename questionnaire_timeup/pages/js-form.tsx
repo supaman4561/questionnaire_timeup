@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const PageWithJsbasedForm = ({ onSubmitForm }: any) => {
+const PageWithJsbasedForm = ({ id, onSubmitForm, startTime }: any) => {
 
   const [answer, setAnswer] = useState("")
   // Handles the submit event on form submit.
@@ -10,7 +10,9 @@ const PageWithJsbasedForm = ({ onSubmitForm }: any) => {
 
     // Get data from the form.
     const data = {
+      id: id,
       answer: event.target.answer.value,
+      startTime: startTime
     }
 
     // Send the data to the server in JSON format.

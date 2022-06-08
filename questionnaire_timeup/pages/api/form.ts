@@ -6,7 +6,8 @@ export default function handler(
 ) {
   if (req.method === 'POST') {
     const body = req.body
-    console.log(body.answer)
+    const time = Date.now() - body.startTime
+    console.log(`ID: ${body.id} Time : ${time/1000} [s], Answer: ${body.answer}`)
     res.status(200).json({ data: `${body.answer}`})
   }
 }
