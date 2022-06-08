@@ -1,5 +1,8 @@
 import { GetStaticProps } from 'next'
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+import PageWithJsbasedForm from './js-form'
 import styles from '../styles/Home.module.css'
 
 type Questions = {
@@ -14,13 +17,27 @@ type Question = {
 
 const Questionnaire: NextPage<Questions> = ({ questions } : Questions) => {
 
-  let count = 0
+  const router = useRouter()
+  const [count, setCount] = useState(0)
+
+  const nextQuestion = () => {
+    if ((count+1) < questions.length) {
+      setCount(count+1);
+    } else {
+      router.push('/')
+    }
+  }
 
   return (
-    <main className={styles.main}>
-      <p> {questions[count].jp} </p>
-      <p> {questions[count].question} </p>
-    </main>
+    <div className={styles.container}>
+
+      <main className={styles.main}>
+        <p> Q.{questions[count].id} </p>
+        <p> {questions[count].jp} </p>
+        <p> {questions[count].question.replace(/\s/g, '\u00A0')} </p>
+        <PageWithJsbasedForm onSubmitForm={nextQuestion} />
+      </main>
+    </div>
   )
 }
 
