@@ -1,0 +1,9 @@
+.timer {
+  height: 10px;
+  width: 80vw;
+}
+
+.timer_inner {
+  background-color: green;
+  height: 10px;
+}
