@@ -18,7 +18,6 @@ const PageWithJsbasedForm = ({ id, onSubmitForm }: any) => {
         btn.current?.click()
         setSec(maxSec)
       }
-      console.log(sec)
     }, 1000)
     return () => {
       clearInterval(id)

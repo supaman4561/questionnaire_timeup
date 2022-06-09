@@ -9,6 +9,7 @@ const Timer = ({ sec, maxSec }: any) => {
 
   return (
     <div className={styles.timer} >
+      <div className={styles.timer_num}>{sec}</div>
       <div className={styles.timer_inner} style={styleGenerator}></div>
     </div>
   )

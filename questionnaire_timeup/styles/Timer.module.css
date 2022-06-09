@@ -1,9 +1,17 @@
 .timer {
   height: 10px;
-  width: 80vw;
+  width: 85vw;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
 
 .timer_inner {
   background-color: green;
   height: 10px;
+}
+
+.timer_num {
+  width: 5vw;
 }
