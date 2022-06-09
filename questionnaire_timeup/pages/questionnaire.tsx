@@ -23,12 +23,16 @@ const Questionnaire: NextPage<Questions> = ({ questions } : Questions) => {
   const [timer, setTimer] = useState(Date.now())
 
   const nextQuestion = () => {
+    const time: number = Date.now() - timer
+
     if ((count+1) < questions.length) {
       setCount(count+1);
     } else {
       router.push('/')
     }
     setTimer(Date.now())
+
+    return time
   }
 
   return (
@@ -40,8 +44,7 @@ const Questionnaire: NextPage<Questions> = ({ questions } : Questions) => {
         <p> {questions[count].question.replace(/\s/g, '\u00A0')} </p>
         <PageWithJsbasedForm 
           id={questions[count].id} 
-          onSubmitForm={nextQuestion} 
-          startTime={timer} />
+          onSubmitForm={nextQuestion} />
       </main>
     </div>
   )
