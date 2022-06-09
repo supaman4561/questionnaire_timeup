@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const PageWithJsbasedForm = ({ id, onSubmitForm, startTime }: any) => {
+const PageWithJsbasedForm = ({ id, onSubmitForm}: any) => {
 
   const [answer, setAnswer] = useState("")
   // Handles the submit event on form submit.
@@ -8,11 +8,13 @@ const PageWithJsbasedForm = ({ id, onSubmitForm, startTime }: any) => {
     // Stop the form from sbmitting and refreshing the page.
     event.preventDefault()
 
+    const time: number = onSubmitForm()
+
     // Get data from the form.
     const data = {
       id: id,
       answer: event.target.answer.value,
-      startTime: startTime
+      time: time
     }
 
     // Send the data to the server in JSON format.
@@ -36,7 +38,6 @@ const PageWithJsbasedForm = ({ id, onSubmitForm, startTime }: any) => {
     const response = await fetch(endpoint, options)
 
     setAnswer('')
-    onSubmitForm()
     
     const result = await response.json()
     console.log(result)
