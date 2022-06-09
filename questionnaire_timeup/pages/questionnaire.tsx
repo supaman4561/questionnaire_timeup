@@ -5,6 +5,7 @@ import { useState } from 'react'
 import PageWithJsbasedForm from './js-form'
 import styles from '../styles/Home.module.css'
 import pretestjson from '../data/pretest.json'
+import posttestjson from '../data/posttest.json'
 
 type Questions = {
   questions: Question[]
@@ -51,7 +52,7 @@ const Questionnaire: NextPage<Questions> = ({ questions } : Questions) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const questions = pretestjson
+  const questions = posttestjson
   return { props: { questions } }
 }
 
