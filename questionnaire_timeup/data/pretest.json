@@ -6,7 +6,97 @@
   },
   {
     "id": 2,
-    "jp": "外国語話せる? --- できたらいいなと思うよ.",
-    "question": "Can you speak a foreign language? ----- I wish I (        )."
+    "jp": "彼女はサリーと同じくらいうまく泳げます。",
+    "question": "She can swim (      ) Sally."
+  },
+  {
+    "id": 3,
+    "jp": "彼らは冷たい飲み物を欲しがっている。",
+    "question": "They want something cold (      )."
+  },
+  {
+    "id": 4,
+    "jp": "彼は笑顔でカメラに向きました。",
+    "question": "He (      ) and turned to the cameras."
+  },
+  {
+    "id": 5,
+    "jp": "すべてのものの中で何がいちばん大切ですか？",
+    "question": "What is (      ) of all things?"
+  },
+  {
+    "id": 6,
+    "jp": "私は警察官になりたい。",
+    "question": "I want (      ) a policeman."
+  },
+  {
+    "id": 7,
+    "jp": "彼女らはたくさんのニワトリを飼っていた。",
+    "question": "They (      ) a lot of chickens."
+  },
+  {
+    "id": 8,
+    "jp": "そのドアのそばに立っている男はアレックスです.",
+    "question": "The boy (            ) by the door is Alex."
+  },
+  {
+    "id": 9,
+    "jp": "もっとお金持ちだったらなあ",
+    "question": "I wish I (      ) richer."
+  },
+  {
+    "id": 10,
+    "jp": "この絵画はたくさんの人に愛されている。",
+    "question": "This painting (          ) by many people."
+  },
+  {
+    "id": 11,
+    "jp": "彼にとって日本語を話すのは簡単だ。",
+    "question": "It is easy for him (      ) Japanese."
+  },
+  {
+    "id": 12,
+    "jp": "カナダはオーストラリアより広いです。",
+    "question": "Canada is (      ) Australia."
+  },
+  {
+    "id": 13,
+    "jp": "2年前から自転車が欲しかった",
+    "question": "I (      ) a bike for two years."
+  },
+  {
+    "id": 14,
+    "jp": "デイビットはそのアイデアが好きではなかった。",
+    "question": "David (      ) the idea very much."
+  },
+  {
+    "id": 15,
+    "jp": "もっとゆっくり話してくれませんか。",
+    "question": "Would you walk (      ) for me?"
+  },
+  {
+    "id": 16,
+    "jp": "私は新聞を読んでいる最中だった。",
+    "question": "I (      ) a newspaper."
+  },
+  {
+    "id": 17,
+    "jp": "ドアに鍵を閉め忘れるな。",
+    "question": "Remember (      ) the door."
+  },
+  {
+    "id": 18,
+    "jp": "富士山は日本で一番高い山だ。",
+    "question": "Mt. Fuji is (      ) mountain in Japan."
+  },
+  {
+    "id": 19,
+    "jp": "彼女は音楽がとても好きな生徒です.",
+    "question": "She is a student (           ) music very much."
+  },
+  {
+    "id": 20,
+    "jp": "彼女は病気がちで眼鏡をかけていた。",
+    "question": "She (      ) often ill and wore glasses."
   }
 ]

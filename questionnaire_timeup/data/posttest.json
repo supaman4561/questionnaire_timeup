@@ -6,7 +6,97 @@
   },
   {
     "id": 2,
-    "jp": "彼女はサリーと同じくらいうまく泳げます。",
-    "question": "She can swim (      ) Sally."
+    "jp": "外国語話せる? --- できたらいいなと思うよ.",
+    "question": "Can you speak a foreign language? ----- I wish I (        )."
+  },
+  {
+    "id": 3,
+    "jp": "彼女は部屋の外で座って待っていた。",
+    "question": "She (      ) and waited outside the room."
+  },
+  {
+    "id": 4,
+    "jp": "その狐はニワトリを食べていた。",
+    "question": "The fox (      ) the chickens."
+  },
+  {
+    "id": 5,
+    "jp": "その時私は映画を見ていた。",
+    "question": "I (      ) a movie at the time."
+  },
+  {
+    "id": 6,
+    "jp": "私にはあの山を登るのは大変だ。",
+    "question": "It is hard for me (      ) that mountain."
+  },
+  {
+    "id": 7,
+    "jp": "今日やるべき宿題がたくさんある。",
+    "question": "I have a lot of homework (      ) today."
+  },
+  {
+    "id": 8,
+    "jp": "彼らは30歳くらいだった。",
+    "question": "They (      ) about thirty."
+  },
+  {
+    "id": 9,
+    "jp": "僕たちは10年間親友です",
+    "question": "We (    )  best friends for 10 years."
+  },
+  {
+    "id": 10,
+    "jp": "どのエンジンが一番効率的ですか？",
+    "question": "Which engine runs (      )?"
+  },
+  {
+    "id": 11,
+    "jp": "私のコンピュータはYujiのものよりも古い。",
+    "question": "My computer is  (      )  Yuji's."
+  },
+  {
+    "id": 12,
+    "jp": "このTシャツは中国で作られました。",
+    "question": "This T-shirt (            ) in China. "
+  },
+  {
+    "id": 13,
+    "jp": "そのボタンを押してみようとしたことがある?",
+    "question": "Have you tried (      ) the button?"
+  },
+  {
+    "id": 14,
+    "jp": "彼は笑顔でカメラに向きました。",
+    "question": "He (      ) anything about art."
+  },
+  {
+    "id": 15,
+    "jp": "トムはクラスで最も背が高い。",
+    "question": "Tom is (      ) in his class."
+  },
+  {
+    "id": 16,
+    "jp": "私はJohnより早く走ることができる。",
+    "question": "I can run (      ) John."
+  },
+  {
+    "id": 17,
+    "jp": "彼女はほかのどの少女よりも美しい。",
+    "question": "She is  (      ) l than any other girl."
+  },
+  {
+    "id": 18,
+    "jp": "これは人々を幸せにする映画です.",
+    "question": "This is a movie (           ) people happy."
+  },
+  {
+    "id": 19,
+    "jp": "逃げるには遅すぎる。",
+    "question": "It's too (      ) away."
+  },
+  {
+    "id": 20,
+    "jp": "これは私が家から持ってきた本です.",
+    "question": "This is a book (           ) from home."
   }
 ]
