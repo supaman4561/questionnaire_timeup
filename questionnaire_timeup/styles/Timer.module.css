@@ -1,6 +1,6 @@
 .timer {
   height: 10px;
-  width: 85vw;
+  width: 80vw;
   margin: 20px;
   display: flex;
   align-items: center;
@@ -13,5 +13,5 @@
 }
 
 .timer_num {
-  width: 5vw;
+  width: 5%;
 }

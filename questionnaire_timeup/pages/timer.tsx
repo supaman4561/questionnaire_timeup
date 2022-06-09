@@ -4,7 +4,7 @@ import styles from '../styles/Timer.module.css'
 const Timer = ({ sec, maxSec }: any) => {
 
   const styleGenerator = {
-    width: `${80 * sec/maxSec}vw`
+    width: `${95 * sec/maxSec}%`
   }
 
   return (
