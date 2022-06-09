@@ -16,6 +16,13 @@ const Home: NextPage = () => {
           Questionnaire Time Up
         </h1>
 
+        <p className={styles.description}>
+          英文法テスト 全20問 <br />
+          空欄を埋める英文法テストです。<br />
+          空欄には単語が<b>複数</b>入ることがあるので注意してください。<br />
+          「Start!」ボタンを押すとすぐに開始します。
+        </p>
+
         <Link href="/questionnaire">
           <a className={styles.card}>
             <h2>Start!</h2>
