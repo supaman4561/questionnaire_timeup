@@ -2,14 +2,14 @@ import { useState, useRef, useEffect } from "react"
 import style from "../styles/Home.module.css"
 import Timer from "./timer"
 
-const PageWithJsbasedForm = ({ id, onSubmitForm }: any) => {
+const PageWithJsbasedForm = ({ params, onSubmitForm }: any) => {
 
   const maxSec = 20
   const [answer, setAnswer] = useState("")
   const [sec, setSec] = useState(maxSec)
   const btn = useRef<HTMLButtonElement>(null)
 
-
+  // count 20sec, updating every 1 sec 
   useEffect(() => {
     const id = setInterval(() => {
       if (sec-1 > 0) {
@@ -24,13 +24,15 @@ const PageWithJsbasedForm = ({ id, onSubmitForm }: any) => {
     }
   }, [sec])
 
-
+  // process when submitting
   const submit = async () => {
     const time: number = onSubmitForm()
 
     // Get data from the form.
     const data = {
-      id: id,
+      userid: params.userid,
+      setid: params.setid,
+      qid: params.qid,
       answer: answer,
       time: time
     }

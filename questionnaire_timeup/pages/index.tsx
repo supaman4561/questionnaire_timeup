@@ -10,12 +10,8 @@ import { getAllQuestionIds } from '../lib/questions'
 
 const Home: NextPage = ({ allQuestionIds }: any) => {
 
+  const [userId, setUserId] = useState("")
   const [questionId, setQuestionId] = useState(allQuestionIds[0].params.id)
-
-
-  const handleChangeSelector = (event: any) => {
-    setQuestionId(event.target.value)
-  }
 
   return (
     <div className={styles.container}>
@@ -36,7 +32,14 @@ const Home: NextPage = ({ allQuestionIds }: any) => {
           「Start!」ボタンを押すとすぐに開始します。
         </p>
 
-        <select value={questionId} onChange={handleChangeSelector}>
+        <div className={styles.grid}>
+          <label htmlFor="userid">User ID: </label>
+          <input type="text" id="userid" name="userid" value={userId}
+            onChange={(e) => { setUserId(e.target.value) }}/>
+        </div>        
+        
+        <select value={questionId} 
+        onChange={(e) => { setQuestionId(e.target.value) }}>
           {allQuestionIds.map(({ params }: any) => (
             <option value={params.id} key={params.id}>
               { params.id }
@@ -44,7 +47,10 @@ const Home: NextPage = ({ allQuestionIds }: any) => {
           ))}
         </select>
 
-        <Link href={`questionnaire/${questionId}`}>
+        <Link href={{
+          pathname: `questionnaire/${questionId}`,
+          query: { userid: userId },
+        }}>
           <a className={styles.card}>
             <h2>Start!</h2>
           </a>
