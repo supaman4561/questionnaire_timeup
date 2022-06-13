@@ -10,8 +10,8 @@ import { getAllQuestionIds } from '../lib/questions'
 
 const Home: NextPage = ({ allQuestionIds }: any) => {
 
+  const [userId, setUserId] = useState()
   const [questionId, setQuestionId] = useState(allQuestionIds[0].params.id)
-
 
   const handleChangeSelector = (event: any) => {
     setQuestionId(event.target.value)
@@ -36,6 +36,12 @@ const Home: NextPage = ({ allQuestionIds }: any) => {
           「Start!」ボタンを押すとすぐに開始します。
         </p>
 
+        <div className={styles.grid}>
+          <label htmlFor="userid">User ID: </label>
+          <input type="text" id="userid" name="userid" value={userId}
+            onChange={(e) => {setUserId(e.target.value)}}/>
+        </div>        
+        
         <select value={questionId} onChange={handleChangeSelector}>
           {allQuestionIds.map(({ params }: any) => (
             <option value={params.id} key={params.id}>
