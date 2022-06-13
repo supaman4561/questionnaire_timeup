@@ -19,7 +19,6 @@ type Question = {
 const Questionnaire: NextPage<Questions> = ({ questions } : any) => {
 
   const router = useRouter()
-  const { test } = router.query
   const [count, setCount] = useState(0)
   const [timer, setTimer] = useState(Date.now())
 

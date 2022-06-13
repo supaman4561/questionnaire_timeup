@@ -9,7 +9,7 @@ const PageWithJsbasedForm = ({ id, onSubmitForm }: any) => {
   const [sec, setSec] = useState(maxSec)
   const btn = useRef<HTMLButtonElement>(null)
 
-
+  
   useEffect(() => {
     const id = setInterval(() => {
       if (sec-1 > 0) {

@@ -47,7 +47,10 @@ const Home: NextPage = ({ allQuestionIds }: any) => {
           ))}
         </select>
 
-        <Link href={`questionnaire/${questionId}`}>
+        <Link href={{
+          pathname: `questionnaire/${questionId}`,
+          query: { userid: userId },
+        }}>
           <a className={styles.card}>
             <h2>Start!</h2>
           </a>
