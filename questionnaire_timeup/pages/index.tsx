@@ -10,12 +10,8 @@ import { getAllQuestionIds } from '../lib/questions'
 
 const Home: NextPage = ({ allQuestionIds }: any) => {
 
-  const [userId, setUserId] = useState()
+  const [userId, setUserId] = useState("")
   const [questionId, setQuestionId] = useState(allQuestionIds[0].params.id)
-
-  const handleChangeSelector = (event: any) => {
-    setQuestionId(event.target.value)
-  }
 
   return (
     <div className={styles.container}>
@@ -39,10 +35,11 @@ const Home: NextPage = ({ allQuestionIds }: any) => {
         <div className={styles.grid}>
           <label htmlFor="userid">User ID: </label>
           <input type="text" id="userid" name="userid" value={userId}
-            onChange={(e) => {setUserId(e.target.value)}}/>
+            onChange={(e) => { setUserId(e.target.value) }}/>
         </div>        
         
-        <select value={questionId} onChange={handleChangeSelector}>
+        <select value={questionId} 
+        onChange={(e) => { setQuestionId(e.target.value) }}>
           {allQuestionIds.map(({ params }: any) => (
             <option value={params.id} key={params.id}>
               { params.id }
