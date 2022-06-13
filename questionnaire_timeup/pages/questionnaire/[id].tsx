@@ -1,11 +1,12 @@
-import { GetStaticProps } from 'next'
+import { GetStaticProps, GetStaticPaths } from 'next'
 import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import PageWithJsbasedForm from './js-form'
-import styles from '../styles/Home.module.css'
-import pretestjson from '../data/pretest.json'
-import posttestjson from '../data/posttest.json'
+import { getAllQuestionIds, getQuestionData } from '../../lib/questions'
+import PageWithJsbasedForm from '../js-form'
+import styles from '../../styles/Home.module.css'
+import pretestjson from '../../data/pretest.json'
+import posttestjson from '../../data/posttest.json'
 
 type Questions = {
   questions: Question[]
@@ -17,9 +18,10 @@ type Question = {
   question: string
 }
 
-const Questionnaire: NextPage<Questions> = ({ questions } : Questions) => {
+const Questionnaire: NextPage<Questions> = ({ questions } : any) => {
 
   const router = useRouter()
+  const { test } = router.query
   const [count, setCount] = useState(0)
   const [timer, setTimer] = useState(Date.now())
 
@@ -51,8 +53,17 @@ const Questionnaire: NextPage<Questions> = ({ questions } : Questions) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const questions = posttestjson
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = getAllQuestionIds()
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }: any) => {
+  const questionData = getQuestionData(params.id)
+  const questions = questionData.jsonObject
   return { props: { questions } }
 }
 

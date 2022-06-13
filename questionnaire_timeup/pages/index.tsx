@@ -1,9 +1,13 @@
+import { GetStaticProps } from 'next'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import pretestjson from '../data/pretest.json'
+import posttestjson from '../data/posttest.json'
+import { getAllQuestionIds } from '../lib/questions'
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ allQuestionIds }: any) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -23,7 +27,18 @@ const Home: NextPage = () => {
           「Start!」ボタンを押すとすぐに開始します。
         </p>
 
-        <Link href="/questionnaire">
+        <ul>
+          {allQuestionIds.map(({ params }: any) => (
+            <li key={params.id}>
+              { params.id }
+            </li>
+          ))}
+        </ul>
+
+        <Link href={{
+          pathname: "/questionnaire",
+          query: { test: 'pre' },
+        }}>
           <a className={styles.card}>
             <h2>Start!</h2>
           </a>
@@ -32,6 +47,13 @@ const Home: NextPage = () => {
       </main>
     </div>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allQuestionIds = getAllQuestionIds()
+  return {
+    props: { allQuestionIds }
+  }
 }
 
 export default Home
