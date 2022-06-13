@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "jp": "私は元気です。",
+    "question": "I (      ) fine."
+  },
+  {
+    "id": 2,
+    "jp": "雨になるでしょう。",
+    "question": "It (      ) rainy."
+  },
+  {
+    "id": 3,
+    "jp": "準備はいい?",
+    "question": "Are you (      )?"
+  },
+  {
+    "id": 4,
+    "jp": "20秒以内に答えてください。",
+    "question": "You have (      ) seconds to answer."
+  },
+  {
+    "id": 5,
+    "jp": "問題は20問あります。",
+    "question": "(      ) 20 questions."
+  }
+]

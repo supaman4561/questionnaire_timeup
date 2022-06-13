@@ -1,9 +1,22 @@
+import { GetStaticProps } from 'next'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '../styles/Home.module.css'
 
-const Home: NextPage = () => {
+import { useState } from 'react'
+
+import styles from '../styles/Home.module.css'
+import { getAllQuestionIds } from '../lib/questions'
+
+const Home: NextPage = ({ allQuestionIds }: any) => {
+
+  const [questionId, setQuestionId] = useState(allQuestionIds[0].params.id)
+
+
+  const handleChangeSelector = (event: any) => {
+    setQuestionId(event.target.value)
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -23,7 +36,15 @@ const Home: NextPage = () => {
           「Start!」ボタンを押すとすぐに開始します。
         </p>
 
-        <Link href="/questionnaire">
+        <select value={questionId} onChange={handleChangeSelector}>
+          {allQuestionIds.map(({ params }: any) => (
+            <option value={params.id} key={params.id}>
+              { params.id }
+            </option>
+          ))}
+        </select>
+
+        <Link href={`questionnaire/${questionId}`}>
           <a className={styles.card}>
             <h2>Start!</h2>
           </a>
@@ -32,6 +53,15 @@ const Home: NextPage = () => {
       </main>
     </div>
   )
+}
+
+
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allQuestionIds = getAllQuestionIds()
+  return {
+    props: { allQuestionIds }
+  }
 }
 
 export default Home
