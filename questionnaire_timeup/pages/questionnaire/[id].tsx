@@ -5,8 +5,6 @@ import { useState } from 'react'
 import { getAllQuestionIds, getQuestionData } from '../../lib/questions'
 import PageWithJsbasedForm from '../js-form'
 import styles from '../../styles/Home.module.css'
-import pretestjson from '../../data/pretest.json'
-import posttestjson from '../../data/posttest.json'
 
 type Questions = {
   questions: Question[]

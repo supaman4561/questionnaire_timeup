@@ -6,8 +6,6 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import styles from '../styles/Home.module.css'
-import pretestjson from '../data/pretest.json'
-import posttestjson from '../data/posttest.json'
 import { getAllQuestionIds } from '../lib/questions'
 
 const Home: NextPage = ({ allQuestionIds }: any) => {
@@ -38,10 +36,6 @@ const Home: NextPage = ({ allQuestionIds }: any) => {
           「Start!」ボタンを押すとすぐに開始します。
         </p>
 
-        <ul>
-          
-        </ul>
-       
         <select value={questionId} onChange={handleChangeSelector}>
           {allQuestionIds.map(({ params }: any) => (
             <option value={params.id} key={params.id}>
