@@ -75,7 +75,7 @@ const PageWithJsbasedForm = ({ id, onSubmitForm }: any) => {
       <div className={style.grid}>
         <form onSubmit={handleSubmit}>
           <label htmlFor="answer">Answer: </label>
-          <input type="text" id="answer" name="answer" value={answer} 
+          <input type="text" id="answer" name="answer" value={answer} autoComplete='off'
             onChange={(e)=>{setAnswer(e.target.value)}}/>
           <button ref={btn} type="submit">回答</button>
         </form>
