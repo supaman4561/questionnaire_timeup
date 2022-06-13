@@ -16,16 +16,17 @@ type Question = {
   question: string
 }
 
-const Questionnaire: NextPage<Questions> = ({ questions } : any) => {
+const Questionnaire: NextPage<Questions> = ({ questionData } : any) => {
 
   const router = useRouter()
   const [count, setCount] = useState(0)
   const [timer, setTimer] = useState(Date.now())
+  const userId = router.query.userid
 
   const nextQuestion = () => {
     const time: number = Date.now() - timer
 
-    if ((count+1) < questions.length) {
+    if ((count+1) < questionData.questions.length) {
       setCount(count+1);
     } else {
       router.push('/')
@@ -39,11 +40,15 @@ const Questionnaire: NextPage<Questions> = ({ questions } : any) => {
     <div className={styles.container}>
 
       <main className={styles.main}>
-        <p> Q.{questions[count].id} </p>
-        <p> {questions[count].jp} </p>
-        <p> {questions[count].question.replace(/\s/g, '\u00A0')} </p>
+        <p> Q.{questionData.questions[count].id} </p>
+        <p> {questionData.questions[count].jp} </p>
+        <p> {questionData.questions[count].question.replace(/\s/g, '\u00A0')} </p>
         <PageWithJsbasedForm 
-          id={questions[count].id} 
+          params={{
+            userid: userId,
+            setid: questionData.id,
+            qid: questionData.questions[count].id,
+          }} 
           onSubmitForm={nextQuestion} />
       </main>
     </div>
@@ -59,9 +64,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  const questionData = getQuestionData(params.id)
-  const questions = questionData.jsonObject
-  return { props: { questions } }
+  const questionId = params.id
+  const questionData = {
+    id: questionId,
+    questions: getQuestionData(questionId).jsonObject
+  }
+  return { props: { questionData } }
 }
 
 export default Questionnaire
