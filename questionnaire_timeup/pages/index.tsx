@@ -35,7 +35,7 @@ const Home: NextPage = ({ allQuestionIds }: any) => {
         <div className={styles.grid}>
           <label htmlFor="userid">User ID: </label>
           <input type="text" id="userid" name="userid" value={userId}
-            onChange={(e) => { setUserId(e.target.value) }}/>
+            onChange={(e) => { setUserId(e.target.value) }} autoComplete="off"/>
         </div>        
         
         <select value={questionId} 
